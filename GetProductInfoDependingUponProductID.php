@@ -12,8 +12,9 @@ $uid = $common->authenticate($db, $username, $password, array());
 $models = ripcord::client("$url/xmlrpc/2/object");
 
 //$partners = $models->execute_kw($db, $uid, $password,'product.template', 'search_read', [[],['fields'=>[]]]);
+$product_id=1009;
 $partners = $models->execute_kw($db, $uid, $password, 'product.template', 'search_read', 
-									array(array(array('sale_ok', '=', true))), 
+									array(array(array('product_id', '=', $product_id))), 
 									array('fields'=>array(
 									'name',
 									'detailed_type',
